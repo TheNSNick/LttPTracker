@@ -61,6 +61,9 @@ def light_world_availability(items):
     lw_locs = dict()
     lw_locs['links_house'] = True
     lw_locs['uncle_tunnel'] = True
+    lw_locs['escape_front'] = True
+    lw_locs['escape_dark'] = bool(items['lantern'])
+    lw_locs['escape_back'] = bool(items['lantern']) or bool(items['gloves'])
     lw_locs['lumberjack_cave'] = bool(items['aga'])
     lw_locs['lost_woods_ledge'] = True
     lw_locs['mushroom_spot'] = True
@@ -114,7 +117,6 @@ def light_world_availability(items):
                                             (bool(items['hookshot']) or bool(items['hookshot']))) or dw_spots['swamp'])
     lw_locs['sashas_hut'] = True
     lw_locs['sasha'] = bool(items['green_pendant'])
-    # TODO -- dungeon #0? (escape + sanctuary)
     return lw_locs
 
 
